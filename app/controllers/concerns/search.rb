@@ -8,6 +8,7 @@ module Search
   end
 
   def parse_search_terms
+    puts "#{Time.now - $INITIAL_TIME} when parsing #{params[:search]}"
     @search_terms = params[:search] if params[:search].present?
   end
 

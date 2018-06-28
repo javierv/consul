@@ -86,6 +86,9 @@ class ApplicationController < ActionController::Base
     end
 
     def ensure_signup_complete
+      if params[:search].present?
+        puts "#{Time.now - $INITIAL_TIME} when ensuring signup with #{params[:search]}"
+      end
       if user_signed_in? && !devise_controller? && current_user.registering_with_oauth
         redirect_to finish_signup_path
       end
