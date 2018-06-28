@@ -15,6 +15,7 @@ feature 'Proposals' do
     create(:proposal, title: 'Seventh proposal, has search term')
 
     visit new_proposal_path
+    puts "Time before filling in with search: #{Time.now - $INITIAL_TIME}"
     fill_in 'proposal_title', with: 'search'
     check "proposal_terms_of_service"
 
@@ -31,6 +32,7 @@ feature 'Proposals' do
     create(:proposal, title: 'Second proposal').update_column(:confidence_score, 8)
 
     visit new_proposal_path
+    puts "Time before filling in with imaginary: #{Time.now - $INITIAL_TIME}"
     fill_in 'proposal_title', with: 'imaginary'
     check "proposal_terms_of_service"
 
