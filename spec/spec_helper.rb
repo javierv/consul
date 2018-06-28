@@ -67,12 +67,6 @@ RSpec.configure do |config|
     DatabaseCleaner.start
   end
 
-  config.after(:each, js: true) do |example|
-    if example.exception
-      puts page.html
-    end
-  end
-
   config.append_after do
     DatabaseCleaner.clean
   end
