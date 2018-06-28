@@ -31,7 +31,7 @@ feature 'Proposals' do
     create(:proposal, title: 'Second proposal').update_column(:confidence_score, 8)
 
     visit new_proposal_path
-    fill_in 'proposal_title', with: 'debate'
+    fill_in 'proposal_title', with: 'imaginary'
     check "proposal_terms_of_service"
 
     within('div#js-suggest') do
