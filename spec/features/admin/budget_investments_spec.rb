@@ -1158,7 +1158,7 @@ feature 'Admin budget investments' do
       end
     end
 
-    scenario "Unmark as visible to valuator", :js do
+    scenario "Unmark as visible to valuator", :js do # TODO: check this one.
       budget.update(phase: 'valuating')
 
       valuator = create(:valuator)
