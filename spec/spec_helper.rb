@@ -66,6 +66,12 @@ RSpec.configure do |config|
     DatabaseCleaner.start
   end
 
+  config.after(:each, js: true) do |example|
+    if example.exception
+      puts "Failed after #{Time.now - $INITIAL_TIME}"
+    end
+  end
+
   config.append_after do
     DatabaseCleaner.clean
   end
