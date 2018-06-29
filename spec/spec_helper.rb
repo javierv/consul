@@ -61,11 +61,6 @@ RSpec.configure do |config|
     Capybara.reset_sessions!
   end
 
-  config.before do
-    $INITIAL_TIME = Time.now
-    DatabaseCleaner.start
-  end
-
   config.append_after do
     DatabaseCleaner.clean
   end
