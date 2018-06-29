@@ -251,6 +251,7 @@ en:
         table_title: "Title"
         table_description: "Description"
         table_publication_date: "Publication date"
+        table_status: Status
         table_actions: "Actions"
         delete: "Delete milestone"
         no_milestones: "Don't have defined milestones"
@@ -260,6 +261,8 @@ en:
       form:
         add_language: Add language
         remove_language: Remove language
+        admin_statuses: Admin investment statuses
+        no_statuses_defined: There are no defined investment statuses yet
       new:
         creating: Create milestone
         date: Date
@@ -272,6 +275,26 @@ en:
         notice: Milestone updated successfully
       delete:
         notice: Milestone successfully deleted
+    statuses:
+      index:
+        title: Investment statuses
+        empty_statuses: There are no investment statuses created
+        new_status: Create new investment status
+        table_name: Name
+        table_description: Description
+        table_actions: Actions
+        delete: Delete
+        edit: Edit
+      edit:
+        title: Edit investment status
+      update:
+        notice: Investment status updated successfully
+      new:
+        title: Create investment status
+      create:
+        notice: Investment status created successfully
+      delete:
+        notice: Investment status deleted successfully
     comments:
       index:
         filter: Filter
