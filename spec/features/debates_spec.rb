@@ -14,6 +14,7 @@ feature 'Debates' do
     create(:debate, title: "Sixth debate has 6 votes", description: 'This is the sixth debate',  cached_votes_up: 6)
     create(:debate, title: "This has seven votes, and is not suggest", description: 'This is the seven', cached_votes_up: 7)
 
+    puts "#{Time.now - $INITIAL_TIME} starting with debate"
     visit new_debate_path
     puts "#{Time.now - $INITIAL_TIME} before filling in with debate"
     fill_in 'debate_title', with: 'debate'
@@ -32,6 +33,7 @@ feature 'Debates' do
     create(:debate, title: "First debate has 10 vote", cached_votes_up: 10)
     create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
 
+    puts "#{Time.now - $INITIAL_TIME} starting with proposal"
     visit new_debate_path
     puts "#{Time.now - $INITIAL_TIME} before filling in with proposal"
     fill_in 'debate_title', with: 'proposal'

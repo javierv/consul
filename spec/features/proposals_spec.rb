@@ -14,6 +14,7 @@ feature 'Proposals' do
     create(:proposal, title: 'Sixth proposal, has search term')
     create(:proposal, title: 'Seventh proposal, has search term')
 
+    puts "#{Time.now - $INITIAL_TIME} starting with search"
     visit new_proposal_path
     puts "#{Time.now - $INITIAL_TIME} before filling in with search"
     fill_in 'proposal_title', with: 'search'
@@ -32,6 +33,7 @@ feature 'Proposals' do
     create(:proposal, title: 'First proposal').update_column(:confidence_score, 10)
     create(:proposal, title: 'Second proposal').update_column(:confidence_score, 8)
 
+    puts "#{Time.now - $INITIAL_TIME} starting with imaginary"
     visit new_proposal_path
     puts "#{Time.now - $INITIAL_TIME} before filling in with imaginary"
     fill_in 'proposal_title', with: 'imaginary'
