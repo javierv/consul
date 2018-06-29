@@ -39,12 +39,7 @@ module CommentableActions
 
   def suggest
     @limit = 5
-    puts Time.now - $INITIAL_TIME
-    if @search_terms.present?
-      puts @search_terms
-    else
-      puts "no search terms"
-    end
+    puts "#{Time.now - $INITIAL_TIME} after suggesting #{@search_terms}"
     @resources = @search_terms.present? ? resource_relation.search(@search_terms) : nil
   end
 

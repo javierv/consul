@@ -15,10 +15,10 @@ feature 'Proposals' do
     create(:proposal, title: 'Seventh proposal, has search term')
 
     visit new_proposal_path
-    puts "Time before filling in with search: #{Time.now - $INITIAL_TIME}"
+    puts "#{Time.now - $INITIAL_TIME} before filling in with search"
     fill_in 'proposal_title', with: 'search'
     check "proposal_terms_of_service"
-    puts "Time after checking terms with search: #{Time.now - $INITIAL_TIME}"
+    puts "#{Time.now - $INITIAL_TIME} after checking terms with search"
 
     within('div#js-suggest') do
       expect(page).to have_content "You are seeing 5 of 6 proposals containing the term 'search'"
@@ -33,10 +33,10 @@ feature 'Proposals' do
     create(:proposal, title: 'Second proposal').update_column(:confidence_score, 8)
 
     visit new_proposal_path
-    puts "Time before filling in with imaginary: #{Time.now - $INITIAL_TIME}"
+    puts "#{Time.now - $INITIAL_TIME} before filling in with imaginary"
     fill_in 'proposal_title', with: 'imaginary'
     check "proposal_terms_of_service"
-    puts "Time after checking terms with imaginary: #{Time.now - $INITIAL_TIME}"
+    puts "#{Time.now - $INITIAL_TIME} after checking terms with imaginary"
 
     within('div#js-suggest') do
       expect(page).not_to have_content 'You are seeing'

@@ -15,10 +15,10 @@ feature 'Debates' do
     create(:debate, title: "This has seven votes, and is not suggest", description: 'This is the seven', cached_votes_up: 7)
 
     visit new_debate_path
-    puts "Time before filling in with debate: #{Time.now - $INITIAL_TIME}"
+    puts "#{Time.now - $INITIAL_TIME} before filling in with debate"
     fill_in 'debate_title', with: 'debate'
     check "debate_terms_of_service"
-    puts "Time after checking terms with debate: #{Time.now - $INITIAL_TIME}"
+    puts "#{Time.now - $INITIAL_TIME} after checking terms with debate"
 
     within('div#js-suggest') do
       expect(page).to have_content "You are seeing 5 of 6 debates containing the term 'debate'"
@@ -33,10 +33,10 @@ feature 'Debates' do
     create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
 
     visit new_debate_path
-    puts "Time before filling in with proposal: #{Time.now - $INITIAL_TIME}"
+    puts "#{Time.now - $INITIAL_TIME} before filling in with proposal"
     fill_in 'debate_title', with: 'proposal'
     check "debate_terms_of_service"
-    puts "Time after checking terms with proposal: #{Time.now - $INITIAL_TIME}"
+    puts "#{Time.now - $INITIAL_TIME} after checking terms with proposal"
 
     within('div#js-suggest') do
       expect(page).not_to have_content 'You are seeing'
