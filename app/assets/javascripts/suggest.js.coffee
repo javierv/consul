@@ -18,8 +18,4 @@ App.Suggest =
 
       timer = null
 
-      $this.on 'keyup', ->
-        window.clearTimeout(timer)
-        timer = window.setTimeout(callback, 1000)
-
       $this.on 'change', callback
