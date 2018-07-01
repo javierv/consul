@@ -1,8 +1,10 @@
 require 'rails_helper'
+require 'time_helper'
 
 feature 'Officing Results' do
 
   background do
+    freeze_time
     @poll_officer = create(:poll_officer)
     @officer_assignment = create(:poll_officer_assignment, :final, officer: @poll_officer)
     @poll = @officer_assignment.booth_assignment.poll
@@ -158,4 +160,7 @@ feature 'Officing Results' do
     within('#total_results') { expect(page).to have_content('66') }
   end
 
+  after do
+    travel_back
+  end
 end
