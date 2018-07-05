@@ -1,1 +1,9 @@
-$("#<%= dom_id(@debate) %>_votes").html('<%= j render("debates/votes", debate: @debate) %>');
+App.Votes.update(
+  "#<%= dom_id(@debate) %>_votes",
+  {
+    "classes": <%= css_classes_for_vote(@debate_votes, @debate).to_json.html_safe %>,
+    "likes_percentage": "<%= votes_percentage('likes', @debate) %>",
+    "dislikes_percentage": "<%= votes_percentage('dislikes', @debate) %>",
+    "total_votes": "<%= j t("debates.debate.votes", count: @debate.total_votes) %>"
+  }
+)

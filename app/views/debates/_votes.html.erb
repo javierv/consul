@@ -7,14 +7,14 @@
         <span class="icon-like">
           <span class="show-for-sr"><%= t('votes.agree') %></span>
         </span>
-        <span class="percentage"><%= votes_percentage('likes', debate) %></span>
+        <span class="percentage likes-percentage"><%= votes_percentage('likes', debate) %></span>
       <% end %>
     <% else %>
       <div class="like">
         <span class="icon-like">
           <span class="show-for-sr"><%= t('votes.agree') %></span>
         </span>
-        <span class="percentage"><%= votes_percentage('likes', debate) %></span>
+        <span class="percentage likes-percentage"><%= votes_percentage('likes', debate) %></span>
       </div>
     <% end %>
   </div>
@@ -27,14 +27,14 @@
         <span class="icon-unlike">
           <span class="show-for-sr"><%= t('votes.disagree') %></span>
         </span>
-        <span class="percentage"><%= votes_percentage('dislikes', debate) %></span>
+        <span class="percentage unlikes-percentage"><%= votes_percentage('dislikes', debate) %></span>
       <% end %>
     <% else %>
       <div class="unlike">
         <span class="icon-unlike">
           <span class="show-for-sr"><%= t('votes.disagree') %></span>
         </span>
-        <span class="percentage"><%= votes_percentage('dislikes', debate) %></span>
+        <span class="percentage unlikes-percentage"><%= votes_percentage('dislikes', debate) %></span>
       </div>
     <% end %>
   </div>
