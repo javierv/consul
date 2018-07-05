@@ -978,7 +978,7 @@ feature 'Admin budget investments' do
     let(:investment1) { create(:budget_investment, heading: heading) }
     let(:investment2) { create(:budget_investment, heading: heading) }
 
-    scenario "Mark as visible to valuator", :js do
+    scenario "Mark as visible to valuator", :js do # TODO: check this one.
       investment1.valuators << valuator
       investment2.valuators << valuator
       investment1.update(administrator: admin)
