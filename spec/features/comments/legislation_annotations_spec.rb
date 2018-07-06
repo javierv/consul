@@ -152,7 +152,7 @@ feature 'Commenting legislation questions' do
     end
   end
 
-  scenario 'Sanitizes comment body for security' do
+  scenario 'Sanitizes comment body for security' do # TODO: this one fails.
     create :comment, commentable: legislation_annotation,
                      body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
