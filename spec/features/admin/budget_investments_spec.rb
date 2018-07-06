@@ -1177,6 +1177,7 @@ feature 'Admin budget investments' do
 
       visit admin_budget_budget_investments_path(budget)
       within('#filter-subnav') { click_link 'Under valuation' }
+      expect(page).to have_content "Current applied filters: Under valuation"
 
       within("#budget_investment_#{investment1.id}") do
         uncheck "budget_investment_visible_to_valuators"
